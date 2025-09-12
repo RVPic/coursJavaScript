@@ -33,6 +33,8 @@ function startTest() {
             return word !== "";
         }).length;
 
+        var length = userTypedText.length;
+
         var wpm = 0; // Valeur par défaut
 
         if (timeElapsed !== 0 && !isNaN(typedWords)) {
@@ -42,6 +44,7 @@ function startTest() {
         // Afficher les résultats
         var outputDiv = document.getElementById("output");
         outputDiv.innerHTML = "<h2>Résultats du test de dactylographie :</h2>" +
+            "<p>Longueur total du texte : " + length + "</p>" +
             "<p>Mots tapés : " + typedWords + "</p>" +
             "<p>Temps écoulé : " + timeElapsed.toFixed(2) + " secondes</p>" +
             "<p>Mots par minute (WPM) : " + wpm + "</p>";
